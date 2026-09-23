@@ -1,0 +1,15 @@
+{
+  "base_url": "http://127.0.0.1:8081",
+  "test_user": {
+    "username": "your_test_username",
+    "password": "your_test_password",
+    "expected_nickname": "your_expected_nickname"
+  },
+  "database": {
+    "host": "127.0.0.1",
+    "port": 13307,
+    "user": "your_database_user",
+    "password": "your_database_password",
+    "database": "litemall"
+  }
+}

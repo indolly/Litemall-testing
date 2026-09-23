@@ -1,0 +1,81 @@
+### gradle ###
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.settings/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+
+### IntelliJ IDEA ###
+/.idea/
+/private/
+/storage/
+/litemall.iml
+.checkstyle
+.idea
+*.iws
+*.iml
+*.ipr
+rebel.xml
+### maven ###
+target/
+*.war
+*.ear
+*.zip
+*.tar
+*.tar.gz
+
+### logs ####
+/logs/
+*.log
+
+### temp ignore ###
+*.cache
+*.diff
+*.patch
+*.tmp
+*.java~
+*.properties~
+*.xml~
+
+### system ignore ###
+.DS_Store
+Thumbs.db
+Servers
+.metadata
+upload
+gen_code
+
+
+### Python test automation ###
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+test-automation/test_config.local.json
+.vscode/
+
+### Allure generated files ###
+test-automation/allure-results/
+test-automation/allure-report/
+test-automation/allure-failure-demo-results/
+test-automation/allure-failure-demo-report/
+test-automation/.docx_qa_report/
+
+### Local database and runtime data ###
+docker/db/data/
+docker/litemall/backup/
+
+### JMeter generated files ###
+test-performance/results/
+
+### Local document build artifacts ###
+.docx_build/
