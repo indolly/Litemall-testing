@@ -229,13 +229,13 @@ def address_factory(db_connection):
 
 #实现订单自动化
 @pytest.fixture
-def order_context(api_session):
+def order_context(api_session, address_factory):
     """
     为订单测试准备独立数据：
     1. 查询一个测试商品的可用规格；
     2. 自动加入购物车；
     3. 查询购物车记录ID；
-    4. 查询收货地址ID；
+    4. 查询收货地址；干净环境没有地址时自动创建；
     5. 测试结束后清理仍留在购物车中的测试商品。
     """
 
@@ -315,14 +315,17 @@ def order_context(api_session):
     assert address_body["errno"] == 0
 
     address_list = address_body["data"]["list"]
-    assert address_list, "测试账号没有收货地址"
+    if address_list:
+        address_id = address_list[0]["id"]
+    else:
+        address_id, _ = address_factory(api_session, "订单自动化地址")
 
     # yield前是准备数据；yield的字典会传给测试函数
     yield {
         "goods_id": goods_id,
         "product_id": product_id,
         "cart_id": cart_item["id"],
-        "address_id": address_list[0]["id"],
+        "address_id": address_id,
         # 保存下单前库存，后面验证下单扣减和取消恢复
         "stock_before": product["number"],
 
