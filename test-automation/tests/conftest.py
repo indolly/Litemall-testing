@@ -1,5 +1,6 @@
 import platform
 import sys
+import uuid
 from pathlib import Path
 
 import allure
@@ -61,6 +62,169 @@ def api_session():
         )
 
         yield session
+
+
+@pytest.fixture
+def secondary_api_session(db_connection):
+    """创建一个一次性的第二用户，用于验证跨用户数据隔离。
+
+    临时用户复制主测试账号的密码哈希，因此可以使用同一个本机测试密码
+    登录；teardown 按临时 user_id 清理其订单、购物车、地址和用户记录。
+    """
+    suffix = uuid.uuid4().hex[:10]
+    username = f"pytest_peer_{suffix}"
+    nickname = f"权限测试用户_{suffix}"
+    mobile = f"18{int(suffix, 16) % 1_000_000_000:09d}"
+
+    with db_connection.cursor() as cursor:
+        inserted = cursor.execute(
+            """
+            INSERT INTO litemall_user (
+                username, password, gender, birthday,
+                last_login_time, last_login_ip, user_level,
+                nickname, mobile, avatar, weixin_openid,
+                session_key, status, add_time, update_time, deleted
+            )
+            SELECT
+                %s, password, gender, birthday,
+                NOW(), '127.0.0.1', user_level,
+                %s, %s, avatar, '',
+                '', status, NOW(), NOW(), 0
+            FROM litemall_user
+            WHERE username = %s AND deleted = 0
+            LIMIT 1
+            """,
+            (username, nickname, mobile, TEST_USERNAME),
+        )
+        assert inserted == 1, "没有找到主测试账号，无法创建临时第二用户"
+        user_id = cursor.lastrowid
+
+    try:
+        with requests.Session() as session:
+            login_response = session.post(
+                f"{BASE_URL}/wx/auth/login",
+                json={
+                    "username": username,
+                    "password": TEST_PASSWORD,
+                },
+                timeout=5,
+            )
+            login_body = login_response.json()
+
+            assert login_response.status_code == 200
+            assert login_body["errno"] == 0
+            assert login_body["data"]["token"]
+
+            session.headers.update(
+                {"X-Litemall-Token": login_body["data"]["token"]}
+            )
+            yield {
+                "session": session,
+                "user_id": user_id,
+                "username": username,
+            }
+    finally:
+        # 只清理由本 fixture 创建的临时 user_id，避免影响真实测试账号。
+        with db_connection.cursor() as cursor:
+            cursor.execute(
+                """
+                DELETE FROM litemall_order_goods
+                WHERE order_id IN (
+                    SELECT id FROM litemall_order WHERE user_id = %s
+                )
+                """,
+                (user_id,),
+            )
+            cursor.execute(
+                "DELETE FROM litemall_order WHERE user_id = %s",
+                (user_id,),
+            )
+            cursor.execute(
+                "DELETE FROM litemall_cart WHERE user_id = %s",
+                (user_id,),
+            )
+            cursor.execute(
+                "DELETE FROM litemall_address WHERE user_id = %s",
+                (user_id,),
+            )
+            cursor.execute(
+                "DELETE FROM litemall_coupon_user WHERE user_id = %s",
+                (user_id,),
+            )
+            cursor.execute(
+                "DELETE FROM litemall_user WHERE id = %s",
+                (user_id,),
+            )
+
+
+@pytest.fixture
+def available_product(api_session):
+    """返回一个库存大于0的测试SKU，供购物车边界用例复用。"""
+    goods_id = 1110017
+    response = api_session.get(
+        f"{BASE_URL}/wx/goods/detail",
+        params={"id": goods_id},
+        timeout=5,
+    )
+    body = response.json()
+
+    assert response.status_code == 200
+    assert body["errno"] == 0
+
+    product = next(
+        (
+            item
+            for item in body["data"]["productList"]
+            if item["number"] > 0
+        ),
+        None,
+    )
+    assert product is not None, "测试商品没有可用库存"
+    return {
+        "goods_id": goods_id,
+        "product_id": product["id"],
+        "stock": product["number"],
+    }
+
+
+@pytest.fixture
+def address_factory(db_connection):
+    """通过接口创建地址，并在用例结束后按ID物理清理测试记录。"""
+    created_ids = []
+
+    def create(session, label="接口自动化地址"):
+        payload = {
+            "name": label,
+            "tel": "13800138000",
+            "province": "北京市",
+            "city": "北京市",
+            "county": "东城区",
+            "areaCode": "110101",
+            "addressDetail": "测试路1号（自动化数据）",
+            "postalCode": "100000",
+            "isDefault": False,
+        }
+        response = session.post(
+            f"{BASE_URL}/wx/address/save",
+            json=payload,
+            timeout=5,
+        )
+        body = response.json()
+        assert response.status_code == 200
+        assert body["errno"] == 0
+        address_id = body["data"]
+        created_ids.append(address_id)
+        return address_id, payload
+
+    yield create
+
+    if created_ids:
+        placeholders = ",".join(["%s"] * len(created_ids))
+        with db_connection.cursor() as cursor:
+            cursor.execute(
+                f"DELETE FROM litemall_address WHERE id IN ({placeholders})",
+                tuple(created_ids),
+            )
 
 
 #实现订单自动化

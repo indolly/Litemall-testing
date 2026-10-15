@@ -1,0 +1,154 @@
+name: Litemall API tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/api-tests.yml"
+      - "docker/**"
+      - "litemall-*/**"
+      - "pom.xml"
+      - "test-automation/**"
+  pull_request:
+    paths:
+      - ".github/workflows/api-tests.yml"
+      - "docker/**"
+      - "litemall-*/**"
+      - "pom.xml"
+      - "test-automation/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: api-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest-api:
+    name: Pytest API regression
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      # These credentials exist only inside the disposable CI environment.
+      LITEMALL_DB_ROOT_PASSWORD: ci-root-password
+      LITEMALL_DB_USERNAME: litemall
+      LITEMALL_DB_PASSWORD: litemall123456
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "8"
+          cache: maven
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: test-automation/requirements.txt
+
+      - name: Install Python test dependencies
+        run: python -m pip install --requirement test-automation/requirements.txt
+
+      - name: Build Litemall backend
+        run: mvn --batch-mode --no-transfer-progress -DskipTests package
+
+      - name: Prepare Docker runtime files
+        shell: bash
+        run: |
+          cat \
+            litemall-db/sql/litemall_schema.sql \
+            litemall-db/sql/litemall_table.sql \
+            litemall-db/sql/litemall_data.sql \
+            > docker/db/init-sql/litemall.sql
+          cp litemall-all/target/litemall-all-*-exec.jar \
+            docker/litemall/litemall.jar
+          cat > docker/.env <<'EOF'
+          LITEMALL_DB_ROOT_PASSWORD=ci-root-password
+          LITEMALL_DB_USERNAME=litemall
+          LITEMALL_DB_PASSWORD=litemall123456
+          LITEMALL_WECHAT_APP_SECRET=
+          EOF
+
+      - name: Start Litemall and MySQL
+        run: docker compose --file docker/docker-compose.yml up --detach --build
+
+      - name: Wait for API readiness
+        shell: bash
+        run: |
+          for attempt in {1..60}; do
+            if curl --fail --silent --show-error \
+              http://127.0.0.1:8081/wx/home/index > /dev/null; then
+              echo "Litemall API is ready."
+              exit 0
+            fi
+            echo "Waiting for Litemall API (${attempt}/60)..."
+            sleep 5
+          done
+          docker compose --file docker/docker-compose.yml ps
+          docker compose --file docker/docker-compose.yml logs --no-color
+          exit 1
+
+      - name: Create CI test configuration
+        shell: bash
+        run: |
+          cat > test-automation/test_config.local.json <<'EOF'
+          {
+            "base_url": "http://127.0.0.1:8081",
+            "test_user": {
+              "username": "user123",
+              "password": "user123",
+              "expected_nickname": "user123"
+            },
+            "database": {
+              "host": "127.0.0.1",
+              "port": 13307,
+              "user": "litemall",
+              "password": "litemall123456",
+              "database": "litemall"
+            }
+          }
+          EOF
+
+      - name: Run Pytest API regression
+        run: |
+          mkdir -p test-automation/test-results
+          python -m pytest test-automation/tests \
+            --alluredir=test-automation/allure-results \
+            --clean-alluredir \
+            --junitxml=test-automation/test-results/pytest.xml
+
+      - name: Collect Docker diagnostics
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p test-automation/test-results
+          docker compose --file docker/docker-compose.yml ps \
+            > test-automation/test-results/docker-compose-ps.txt || true
+          docker compose --file docker/docker-compose.yml logs --no-color \
+            > test-automation/test-results/docker-compose.log || true
+
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-evidence-${{ github.run_number }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            test-automation/allure-results/
+            test-automation/test-results/
+            docker/litemall/logs/
+
+      - name: Stop test environment
+        if: always()
+        run: docker compose --file docker/docker-compose.yml down --volumes

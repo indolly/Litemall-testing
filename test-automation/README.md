@@ -1,15 +1,18 @@
 # Litemall 接口自动化测试
 
+[![Litemall API tests](https://github.com/indolly/Litemall-testing/actions/workflows/api-tests.yml/badge.svg)](https://github.com/indolly/Litemall-testing/actions/workflows/api-tests.yml)
+
 ## 项目介绍
 
 本项目基于 Litemall 商城系统开展接口自动化测试，覆盖用户登录、商品搜索、购物车鉴权及订单状态流转，并结合 MySQL 验证接口响应、业务状态与数据库记录的一致性。
 
-当前自动化测试包含 11 条核心回归用例，测试结果通过 Allure 报告展示。
+当前自动化测试共收集 30 条用例：27 条通过，3 条因已确认缺陷标记为 `xfail`。测试结果可通过 Allure 报告展示。
+
 ## 测试成果
 
 ### Pytest 全量回归
 
-11 条核心接口用例全部通过，并成功生成 Allure 报告。
+原有 11 条核心回归用例全部通过；补充地址、参数边界、重复提交和跨用户权限后，当前结果为 `27 passed, 3 xfailed`。
 
 ![Pytest全量回归](docs/images/pytest-full-pass.png)
 
@@ -48,8 +51,9 @@
 | --- | --- |
 | 用户认证 | 登录成功、错误密码、空用户名、不存在用户 |
 | 商品 | 搜索存在商品、搜索不存在商品 |
-| 购物车 | 登录查询、无 Token、非法 Token |
-| 订单 | 结算金额、提交、详情、取消、删除 |
+| 收货地址 | 新增、查询、修改、删除、非法字段、未登录、跨用户访问 |
+| 购物车 | 登录查询、无 Token、非法 Token、数量边界、库存边界、跨用户隔离 |
+| 订单 | 结算金额、提交、详情、取消、删除、缺参、重复提交、跨用户访问 |
 | 数据库 | 订单主表、订单商品子表、商品快照、逻辑删除 |
 | 库存 | 下单扣减库存、取消恢复库存 |
 
@@ -73,7 +77,9 @@ test-automation
 │   ├── test_wx_auth.py
 │   ├── test_wx_goods.py
 │   ├── test_wx_cart.py
-│   └── test_wx_order.py
+│   ├── test_wx_address.py
+│   ├── test_wx_order.py
+│   └── test_wx_order_security.py
 ├── requirements.txt
 ├── run_tests.ps1
 └── README.md
@@ -121,8 +127,26 @@ python -m pytest
 预期结果：
 
 ```text
-11 passed
+27 passed, 3 xfailed
 ```
+
+## GitHub Actions CI
+
+`.github/workflows/api-tests.yml` 是本项目自行编写的接口自动化流水线，与原项目的 Java、Node 构建流程相互独立。流水线会在一次性的 GitHub runner 中完成：
+
+```text
+检出代码
+→ 编译 Litemall 后端
+→ 初始化 MySQL 测试库
+→ 使用 Docker Compose 启动被测系统
+→ 等待接口健康就绪
+→ 安装 Python 测试依赖
+→ 执行 30 条 Pytest 用例
+→ 上传 JUnit、Allure 原始结果和 Docker 日志
+→ 销毁测试环境
+```
+
+流水线支持 `push`、`pull_request` 和手动触发。即使用例失败，`if: always()` 步骤仍会保存测试结果和服务日志，便于定位是业务断言失败、环境启动失败还是数据库异常。
 
 ## 一键执行并生成报告
 
@@ -179,9 +203,20 @@ allure open .\test-automation\allure-report
 
 性能测试已在独立的 `test-performance` 目录完成，包括基准、负载、压力、稳定性测试、Docker 资源监控和配置 A/B 实验。
 
-接口自动化后续可继续补充：
+## 当前已确认缺陷
+
+以下用例使用 `pytest.mark.xfail(strict=True)` 保留为缺陷回归用例。`xfail` 表示预期失败，不表示功能正确；修复后如果意外通过，严格模式会以 `XPASS` 提醒移除标记并按正常用例管理。
+
+| 缺陷 | 实际结果 | 主要风险 |
+| --- | --- | --- |
+| 加购物车缺少 `number` | HTTP 200，`errno=502`；日志定位到 `WxCartController.java:122` 空指针 | 非法输入变成系统内部错误 |
+| 同一 `cartId` 重复提交 | 第二次仍返回成功并创建新订单 | 重复订单、重复扣库存、接口缺少幂等保护 |
+| 第二用户提交第一用户购物车 | 返回成功并为第二用户创建订单 | 跨用户越权、数据隔离失效 |
+
+详细执行与定位结果见 `docs/api-abnormal-permission-test-report.md`。
+
+接口自动化后续还可继续补充：
 
 - Token 过期和刷新场景；
-- 重复提交与接口幂等性；
 - 并发下单及库存一致性；
 - 更多用户、商品和订单边界条件。

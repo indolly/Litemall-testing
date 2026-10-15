@@ -79,3 +79,17 @@ test-performance/results/
 
 ### Local document build artifacts ###
 .docx_build/
+test-automation/.docx_backup/
+test-automation/docs/.docx_extract/
+test-automation/output/
+test-automation/tools/
+
+### Codex local working files ###
+.codex-work/
+
+### Functional test case build artifacts ###
+test-functional/.build/
+*.xlsx.inspect.ndjson
+
+### CI test outputs ###
+test-automation/test-results/
