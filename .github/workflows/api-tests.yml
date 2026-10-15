@@ -8,15 +8,11 @@ on:
     paths:
       - ".github/workflows/api-tests.yml"
       - "docker/**"
-      - "litemall-*/**"
-      - "pom.xml"
       - "test-automation/**"
   pull_request:
     paths:
       - ".github/workflows/api-tests.yml"
       - "docker/**"
-      - "litemall-*/**"
-      - "pom.xml"
       - "test-automation/**"
 
 permissions:
@@ -42,6 +38,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Check out Litemall system under test
+        uses: actions/checkout@v4
+        with:
+          repository: linlinjava/litemall
+          ref: master
+          path: sut
+
       - name: Set up Java 8
         uses: actions/setup-java@v4
         with:
@@ -60,17 +63,20 @@ jobs:
         run: python -m pip install --requirement test-automation/requirements.txt
 
       - name: Build Litemall backend
-        run: mvn --batch-mode --no-transfer-progress -DskipTests package
+        run: >-
+          mvn --file sut/pom.xml
+          --batch-mode --no-transfer-progress
+          -DskipTests package
 
       - name: Prepare Docker runtime files
         shell: bash
         run: |
           cat \
-            litemall-db/sql/litemall_schema.sql \
-            litemall-db/sql/litemall_table.sql \
-            litemall-db/sql/litemall_data.sql \
+            sut/litemall-db/sql/litemall_schema.sql \
+            sut/litemall-db/sql/litemall_table.sql \
+            sut/litemall-db/sql/litemall_data.sql \
             > docker/db/init-sql/litemall.sql
-          cp litemall-all/target/litemall-all-*-exec.jar \
+          cp sut/litemall-all/target/litemall-all-*-exec.jar \
             docker/litemall/litemall.jar
           cat > docker/.env <<'EOF'
           LITEMALL_DB_ROOT_PASSWORD=ci-root-password

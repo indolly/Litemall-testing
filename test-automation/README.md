@@ -136,6 +136,7 @@ python -m pytest
 
 ```text
 检出代码
+→ 检出官方 Litemall 被测系统源码
 → 编译 Litemall 后端
 → 初始化 MySQL 测试库
 → 使用 Docker Compose 启动被测系统
@@ -145,6 +146,8 @@ python -m pytest
 → 上传 JUnit、Allure 原始结果和 Docker 日志
 → 销毁测试环境
 ```
+
+测试代码与被测系统源码分仓管理：本仓库保存测试资产，流水线执行时把官方 Litemall 检出到临时 `sut` 目录。这样不会把完整开源源码复制进测试作品仓库，也能在干净环境中复现构建和测试过程。
 
 流水线支持 `push`、`pull_request` 和手动触发。即使用例失败，`if: always()` 步骤仍会保存测试结果和服务日志，便于定位是业务断言失败、环境启动失败还是数据库异常。
 
