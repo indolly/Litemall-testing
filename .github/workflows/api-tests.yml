@@ -71,6 +71,13 @@ jobs:
       - name: Prepare Docker runtime files
         shell: bash
         run: |
+          mkdir -p \
+            docker/db/conf.d \
+            docker/db/data \
+            docker/db/init-sql \
+            docker/litemall/backup \
+            docker/litemall/logs \
+            docker/litemall/storage
           cat \
             sut/litemall-db/sql/litemall_schema.sql \
             sut/litemall-db/sql/litemall_table.sql \
