@@ -1,0 +1,1064 @@
+{
+  "checks": [
+    {
+      "name": "页面四件套: pages/index/index",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/catalog/catalog",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/newGoods/newGoods",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/hotGoods/hotGoods",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/index/index",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/address/address",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/addressAdd/addressAdd",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/feedback/feedback",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/footprint/footprint",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/order/order",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/orderDetail/orderDetail",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/couponList/couponList",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/couponSelect/couponSelect",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/collect/collect",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/auth/login/login",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/auth/accountLogin/accountLogin",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/auth/register/register",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/auth/reset/reset",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/payResult/payResult",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/comment/comment",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/commentPost/commentPost",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/topic/topic",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/topicComment/topicComment",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/topicDetail/topicDetail",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/topicCommentPost/topicCommentPost",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/brand/brand",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/brandDetail/brandDetail",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/search/search",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/category/category",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/cart/cart",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/checkout/checkout",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/goods/goods",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/about/about",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/groupon/myGroupon/myGroupon",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/groupon/grouponDetail/grouponDetail",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/groupon/grouponList/grouponList",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/coupon/coupon",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/help/help",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/aftersale/aftersale",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/aftersaleList/aftersaleList",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "页面四件套: pages/ucenter/aftersaleDetail/aftersaleDetail",
+      "status": "PASS",
+      "detail": "文件齐全"
+    },
+    {
+      "name": "TabBar: 首页",
+      "status": "PASS",
+      "detail": "路由和图标有效"
+    },
+    {
+      "name": "TabBar: 分类",
+      "status": "PASS",
+      "detail": "路由和图标有效"
+    },
+    {
+      "name": "TabBar: 购物车",
+      "status": "PASS",
+      "detail": "路由和图标有效"
+    },
+    {
+      "name": "TabBar: 个人",
+      "status": "PASS",
+      "detail": "路由和图标有效"
+    },
+    {
+      "name": "JSON: app.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/action-sheet/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/area/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/button/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/card/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/cell/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/cell-group/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/checkbox/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/checkbox-group/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/circle/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/col/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/collapse/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/collapse-item/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/count-down/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/datetime-picker/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/dialog/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/divider/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/dropdown-item/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/dropdown-menu/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/field/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/goods-action/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/goods-action-button/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/goods-action-icon/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/grid/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/grid-item/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/icon/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/image/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/index-anchor/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/index-bar/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/info/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/loading/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/nav-bar/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/notice-bar/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/notify/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/overlay/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/panel/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/picker/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/picker-column/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/popup/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/progress/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/radio/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/radio-group/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/rate/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/row/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/search/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/sidebar/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/sidebar-item/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/skeleton/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/slider/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/stepper/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/steps/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/sticky/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/submit-bar/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/swipe-cell/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/switch/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/tab/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/tabbar/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/tabbar-item/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/tabs/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/tag/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/toast/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/transition/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/tree-select/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: lib/vant-weapp/uploader/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/about/about.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/auth/accountLogin/accountLogin.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/auth/login/login.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/auth/register/register.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/auth/reset/reset.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/brand/brand.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/brandDetail/brandDetail.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/cart/cart.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/catalog/catalog.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/category/category.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/checkout/checkout.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/comment/comment.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/commentPost/commentPost.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/coupon/coupon.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/goods/goods.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/groupon/grouponDetail/grouponDetail.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/groupon/grouponList/grouponList.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/groupon/myGroupon/myGroupon.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/help/help.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/hotGoods/hotGoods.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/index/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/newGoods/newGoods.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/payResult/payResult.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/search/search.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/topic/topic.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/topicComment/topicComment.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/topicCommentPost/topicCommentPost.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/topicDetail/topicDetail.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/address/address.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/addressAdd/addressAdd.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/aftersale/aftersale.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/aftersaleDetail/aftersaleDetail.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/aftersaleList/aftersaleList.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/collect/collect.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/couponList/couponList.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/couponSelect/couponSelect.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/feedback/feedback.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/footprint/footprint.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/index/index.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/order/order.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: pages/ucenter/orderDetail/orderDetail.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: project.config.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: project.private.config.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "JSON: sitemap.json",
+      "status": "PASS",
+      "detail": "语法有效"
+    },
+    {
+      "name": "本地接口配置",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8081/wx/"
+    }
+  ],
+  "findings": [
+    {
+      "level": "INFO",
+      "item": "真机访问限制",
+      "detail": "http://127.0.0.1:8081/wx/ 只适用于开发者工具；真机中的 127.0.0.1 指向手机本身，真机测试需改为电脑局域网 IP 或测试环境 HTTPS 域名。"
+    },
+    {
+      "level": "RISK",
+      "item": "基础库版本",
+      "detail": "project.config.json 固定为 2.4.0，版本较旧。运行态应至少覆盖项目版本 2.4.0 与开发者工具当前稳定基础库。"
+    },
+    {
+      "level": "INFO",
+      "item": "调试模式",
+      "detail": "app.json 的 debug=true 适用于测试环境；发布构建前应关闭，避免保留额外调试信息。"
+    },
+    {
+      "level": "RISK",
+      "item": "兼容性敏感 API: wx.getSystemInfo",
+      "detail": "使用位置：lib/wxParse/wxParse.js, pages/category/category.js。应在新基础库和目标机型上回归，并关注开发者工具的废弃提示。"
+    },
+    {
+      "level": "RISK",
+      "item": "兼容性敏感 API: wx.chooseImage",
+      "detail": "使用位置：lib/vant-weapp/uploader/index.js, pages/commentPost/commentPost.js, pages/topicCommentPost/topicCommentPost.js, pages/ucenter/feedback/feedback.js。应在新基础库和目标机型上回归，并关注开发者工具的废弃提示。"
+    }
+  ],
+  "apiUsage": {
+    "wx.getUpdateManager": [
+      "app.js"
+    ],
+    "wx.showModal": [
+      "app.js",
+      "pages/auth/accountLogin/accountLogin.js",
+      "pages/auth/register/register.js",
+      "pages/auth/reset/reset.js",
+      "pages/commentPost/commentPost.js",
+      "pages/goods/goods.js",
+      "pages/topicCommentPost/topicCommentPost.js",
+      "pages/ucenter/address/address.js",
+      "pages/ucenter/aftersale/aftersale.js",
+      "pages/ucenter/collect/collect.js",
+      "pages/ucenter/feedback/feedback.js",
+      "pages/ucenter/footprint/footprint.js",
+      "pages/ucenter/index/index.js",
+      "pages/ucenter/orderDetail/orderDetail.js"
+    ],
+    "wx.createCanvasContext": [
+      "lib/vant-weapp/circle/index.js"
+    ],
+    "wx.getSystemInfoSync": [
+      "lib/vant-weapp/common/utils.js",
+      "lib/vant-weapp/dropdown-menu/index.js",
+      "lib/vant-weapp/nav-bar/index.js",
+      "lib/vant-weapp/notify/index.js"
+    ],
+    "wx.nextTick": [
+      "lib/vant-weapp/dropdown-item/index.js",
+      "lib/vant-weapp/sticky/index.js",
+      "lib/vant-weapp/tabs/index.js"
+    ],
+    "wx.pageScrollTo": [
+      "lib/vant-weapp/index-bar/index.js"
+    ],
+    "wx.createSelectorQuery": [
+      "lib/vant-weapp/mixins/basic.js"
+    ],
+    "wx.createAnimation": [
+      "lib/vant-weapp/notice-bar/index.js"
+    ],
+    "wx.chooseImage": [
+      "lib/vant-weapp/uploader/index.js",
+      "pages/commentPost/commentPost.js",
+      "pages/topicCommentPost/topicCommentPost.js",
+      "pages/ucenter/feedback/feedback.js"
+    ],
+    "wx.chooseMessageFile": [
+      "lib/vant-weapp/uploader/index.js"
+    ],
+    "wx.previewImage": [
+      "lib/vant-weapp/uploader/index.js",
+      "lib/wxParse/wxParse.js",
+      "pages/commentPost/commentPost.js",
+      "pages/topicCommentPost/topicCommentPost.js",
+      "pages/ucenter/aftersale/aftersale.js",
+      "pages/ucenter/feedback/feedback.js"
+    ],
+    "wx.showToast": [
+      "lib/vant-weapp/uploader/index.js",
+      "pages/commentPost/commentPost.js",
+      "pages/coupon/coupon.js",
+      "pages/goods/goods.js",
+      "pages/groupon/grouponList/grouponList.js",
+      "pages/index/index.js",
+      "pages/topic/topic.js",
+      "pages/topicCommentPost/topicCommentPost.js",
+      "pages/ucenter/aftersale/aftersale.js",
+      "pages/ucenter/aftersaleList/aftersaleList.js",
+      "pages/ucenter/collect/collect.js",
+      "pages/ucenter/couponList/couponList.js",
+      "pages/ucenter/couponSelect/couponSelect.js",
+      "pages/ucenter/feedback/feedback.js",
+      "pages/ucenter/footprint/footprint.js",
+      "pages/ucenter/index/index.js",
+      "pages/ucenter/order/order.js",
+      "pages/ucenter/orderDetail/orderDetail.js",
+      "utils/util.js"
+    ],
+    "wx.getSystemInfo": [
+      "lib/wxParse/wxParse.js",
+      "pages/category/category.js"
+    ],
+    "wx.openLocation": [
+      "pages/about/about.js"
+    ],
+    "wx.makePhoneCall": [
+      "pages/about/about.js"
+    ],
+    "wx.request": [
+      "pages/auth/accountLogin/accountLogin.js",
+      "pages/auth/register/register.js",
+      "pages/auth/reset/reset.js",
+      "utils/util.js"
+    ],
+    "wx.setStorageSync": [
+      "pages/auth/accountLogin/accountLogin.js",
+      "pages/auth/register/register.js",
+      "pages/cart/cart.js",
+      "pages/checkout/checkout.js",
+      "pages/goods/goods.js",
+      "pages/ucenter/address/address.js",
+      "pages/ucenter/addressAdd/addressAdd.js",
+      "pages/ucenter/couponSelect/couponSelect.js",
+      "pages/ucenter/index/index.js",
+      "utils/user.js"
+    ],
+    "wx.setStorage": [
+      "pages/auth/accountLogin/accountLogin.js",
+      "pages/auth/register/register.js"
+    ],
+    "wx.switchTab": [
+      "pages/auth/accountLogin/accountLogin.js",
+      "pages/auth/register/register.js",
+      "pages/commentPost/commentPost.js",
+      "pages/goods/goods.js",
+      "pages/ucenter/aftersale/aftersale.js"
+    ],
+    "wx.getUserProfile": [
+      "pages/auth/login/login.js"
+    ],
+    "wx.navigateBack": [
+      "pages/auth/login/login.js",
+      "pages/auth/reset/reset.js",
+      "pages/commentPost/commentPost.js",
+      "pages/search/search.js",
+      "pages/topicCommentPost/topicCommentPost.js",
+      "pages/ucenter/address/address.js",
+      "pages/ucenter/addressAdd/addressAdd.js",
+      "pages/ucenter/couponSelect/couponSelect.js"
+    ],
+    "wx.navigateTo": [
+      "pages/auth/login/login.js",
+      "pages/cart/cart.js",
+      "pages/checkout/checkout.js",
+      "pages/coupon/coupon.js",
+      "pages/goods/goods.js",
+      "pages/index/index.js",
+      "pages/topicDetail/topicDetail.js",
+      "pages/ucenter/address/address.js",
+      "pages/ucenter/collect/collect.js",
+      "pages/ucenter/feedback/feedback.js",
+      "pages/ucenter/footprint/footprint.js",
+      "pages/ucenter/index/index.js",
+      "utils/util.js"
+    ],
+    "wx.login": [
+      "pages/auth/register/register.js",
+      "utils/user.js"
+    ],
+    "wx.showLoading": [
+      "pages/brand/brand.js",
+      "pages/catalog/catalog.js",
+      "pages/checkout/checkout.js",
+      "pages/ucenter/aftersale/aftersale.js",
+      "pages/ucenter/aftersaleDetail/aftersaleDetail.js",
+      "pages/ucenter/collect/collect.js",
+      "pages/ucenter/couponSelect/couponSelect.js",
+      "pages/ucenter/feedback/feedback.js",
+      "pages/ucenter/footprint/footprint.js",
+      "pages/ucenter/orderDetail/orderDetail.js"
+    ],
+    "wx.hideLoading": [
+      "pages/brand/brand.js",
+      "pages/catalog/catalog.js",
+      "pages/checkout/checkout.js",
+      "pages/ucenter/aftersale/aftersale.js",
+      "pages/ucenter/aftersaleDetail/aftersaleDetail.js",
+      "pages/ucenter/collect/collect.js",
+      "pages/ucenter/feedback/feedback.js",
+      "pages/ucenter/footprint/footprint.js",
+      "pages/ucenter/orderDetail/orderDetail.js"
+    ],
+    "wx.showNavigationBarLoading": [
+      "pages/cart/cart.js",
+      "pages/catalog/catalog.js",
+      "pages/comment/comment.js",
+      "pages/groupon/myGroupon/myGroupon.js",
+      "pages/index/index.js",
+      "pages/topicComment/topicComment.js",
+      "pages/ucenter/couponList/couponList.js",
+      "pages/ucenter/orderDetail/orderDetail.js"
+    ],
+    "wx.hideNavigationBarLoading": [
+      "pages/cart/cart.js",
+      "pages/catalog/catalog.js",
+      "pages/comment/comment.js",
+      "pages/groupon/myGroupon/myGroupon.js",
+      "pages/index/index.js",
+      "pages/topicComment/topicComment.js",
+      "pages/ucenter/couponList/couponList.js",
+      "pages/ucenter/orderDetail/orderDetail.js"
+    ],
+    "wx.stopPullDownRefresh": [
+      "pages/cart/cart.js",
+      "pages/catalog/catalog.js",
+      "pages/comment/comment.js",
+      "pages/groupon/myGroupon/myGroupon.js",
+      "pages/index/index.js",
+      "pages/topicComment/topicComment.js",
+      "pages/ucenter/couponList/couponList.js",
+      "pages/ucenter/orderDetail/orderDetail.js"
+    ],
+    "wx.setNavigationBarTitle": [
+      "pages/category/category.js"
+    ],
+    "wx.getStorageSync": [
+      "pages/checkout/checkout.js",
+      "pages/ucenter/couponSelect/couponSelect.js",
+      "pages/ucenter/index/index.js",
+      "pages/ucenter/order/order.js",
+      "utils/user.js",
+      "utils/util.js"
+    ],
+    "wx.redirectTo": [
+      "pages/checkout/checkout.js",
+      "utils/util.js"
+    ],
+    "wx.requestPayment": [
+      "pages/checkout/checkout.js",
+      "pages/payResult/payResult.js",
+      "pages/ucenter/orderDetail/orderDetail.js"
+    ],
+    "wx.uploadFile": [
+      "pages/commentPost/commentPost.js",
+      "pages/topicCommentPost/topicCommentPost.js",
+      "pages/ucenter/aftersale/aftersale.js",
+      "pages/ucenter/feedback/feedback.js"
+    ],
+    "wx.hideToast": [
+      "pages/coupon/coupon.js",
+      "pages/groupon/grouponList/grouponList.js",
+      "pages/topic/topic.js",
+      "pages/ucenter/couponSelect/couponSelect.js"
+    ],
+    "wx.downloadFile": [
+      "pages/goods/goods.js"
+    ],
+    "wx.saveImageToPhotosAlbum": [
+      "pages/goods/goods.js"
+    ],
+    "wx.getSetting": [
+      "pages/goods/goods.js"
+    ],
+    "wx.authorize": [
+      "pages/goods/goods.js"
+    ],
+    "wx.removeStorage": [
+      "pages/ucenter/address/address.js"
+    ],
+    "wx.removeStorageSync": [
+      "pages/ucenter/index/index.js",
+      "utils/util.js"
+    ],
+    "wx.reLaunch": [
+      "pages/ucenter/index/index.js"
+    ],
+    "wx.checkSession": [
+      "utils/user.js"
+    ]
+  }
+}

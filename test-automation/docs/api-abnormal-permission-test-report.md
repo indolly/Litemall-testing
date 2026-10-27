@@ -51,11 +51,11 @@
 ## 4. 执行结果
 
 ```text
-collected 30 items
-27 passed, 3 xfailed
+collected 44 items
+41 passed, 3 xfailed
 ```
 
-其中27条满足预期，3条`xfail`对应已确认缺陷。`xfail`不是忽略测试，而是把缺陷场景保留在回归集中；使用`strict=True`后，代码修复会产生`XPASS`，提醒测试人员重新审核并移除标记。
+其中41条满足预期，3条`xfail`对应已确认缺陷。`xfail`不是忽略测试，而是把缺陷场景保留在回归集中；使用`strict=True`后，代码修复会产生`XPASS`，提醒测试人员重新审核并移除标记。本轮新增的基础安全子集结果为`18 passed, 2 xfailed`，详见`basic-security-test-report.md`。
 
 ## 5. 缺陷一：缺少购物车数量触发系统内部错误
 

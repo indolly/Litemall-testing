@@ -5,6 +5,9 @@ import requests
 from settings import BASE_URL, TEST_USERNAME
 
 
+pytestmark = pytest.mark.security
+
+
 def build_submit_payload(order_context, address_id=None):
     return {
         "cartId": order_context["cart_id"],

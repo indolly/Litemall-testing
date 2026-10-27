@@ -6,19 +6,19 @@
 
 本项目基于 Litemall 商城系统开展接口自动化测试，覆盖用户登录、商品搜索、购物车鉴权及订单状态流转，并结合 MySQL 验证接口响应、业务状态与数据库记录的一致性。
 
-当前自动化测试共收集 30 条用例：27 条通过，3 条因已确认缺陷标记为 `xfail`。测试结果可通过 Allure 报告展示。
+当前自动化测试共收集 44 条用例：41 条通过，3 条因已确认缺陷标记为 `xfail`。其中基础安全子集包含 20 项检查，结果为 `18 passed, 2 xfailed`。测试结果可通过 Allure 报告展示。
 
 ## 测试成果
 
 ### Pytest 全量回归
 
-原有 11 条核心回归用例全部通过；补充地址、参数边界、重复提交和跨用户权限后，当前结果为 `27 passed, 3 xfailed`。
+原有 11 条核心回归用例全部通过；补充地址、参数边界、重复提交、认证、Token、敏感信息和跨用户权限后，当前结果为 `41 passed, 3 xfailed`。
 
 ![Pytest全量回归](docs/images/pytest-full-pass.png)
 
 ### Allure 报告总览
 
-当前核心回归集共 11 条测试，执行结果为 100% 通过。
+下图为首批 11 条核心回归的 Allure 总览。当前 44 条回归集的结果为 `41 passed, 3 xfailed`，各轮次结果按对应报告记录。
 
 ![Allure报告总览](docs/images/allure-overview.png)
 
@@ -79,7 +79,8 @@ test-automation
 │   ├── test_wx_cart.py
 │   ├── test_wx_address.py
 │   ├── test_wx_order.py
-│   └── test_wx_order_security.py
+│   ├── test_wx_order_security.py
+│   └── test_wx_security.py
 ├── requirements.txt
 ├── run_tests.ps1
 └── README.md
@@ -127,7 +128,7 @@ python -m pytest
 预期结果：
 
 ```text
-27 passed, 3 xfailed
+41 passed, 3 xfailed
 ```
 
 ## GitHub Actions CI
@@ -142,7 +143,7 @@ python -m pytest
 → 使用 Docker Compose 启动被测系统
 → 等待接口健康就绪
 → 安装 Python 测试依赖
-→ 执行 30 条 Pytest 用例
+→ 执行 44 条 Pytest 用例
 → 上传 JUnit、Allure 原始结果和 Docker 日志
 → 销毁测试环境
 ```
@@ -218,8 +219,24 @@ allure open .\test-automation\allure-report
 
 详细执行与定位结果见 `docs/api-abnormal-permission-test-report.md`。
 
+## 基础安全测试
+
+基础安全子集覆盖未登录访问、伪造与过期 Token、对象级授权、参数篡改、敏感字段、重复提交和输入校验。
+
+```powershell
+python -m pytest -m security -q
+```
+
+2026-10-18 本地执行结果：
+
+```text
+18 passed, 2 xfailed
+```
+
+两项 `xfail` 分别对应“同一购物车重复提交”和“其他用户提交当前用户购物车”的已知缺陷。完整范围、结果、风险和修复建议见 [基础安全测试报告](docs/basic-security-test-report.md)。
+
 接口自动化后续还可继续补充：
 
-- Token 过期和刷新场景；
+- Token 刷新、主动退出和服务端撤销场景；
 - 并发下单及库存一致性；
 - 更多用户、商品和订单边界条件。

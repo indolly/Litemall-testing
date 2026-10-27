@@ -84,8 +84,18 @@ test-automation/docs/.docx_extract/
 test-automation/output/
 test-automation/tools/
 
+### Private interview and personal reference documents ###
+**/*面试*.docx
+**/*问答*.docx
+**/*手册*.docx
+**/*面试*.pdf
+**/*问答*.pdf
+**/*手册*.pdf
+
 ### Codex local working files ###
 .codex-work/
+test-compatibility/.docx_qa/
+test-compatibility/scripts/update_interview_handbook_compatibility.py
 
 ### Functional test case build artifacts ###
 test-functional/.build/
