@@ -1,5 +1,7 @@
 # Litemall 电商系统测试实践
 
+[![Litemall API tests](https://github.com/indolly/Litemall-testing/actions/workflows/api-tests.yml/badge.svg)](https://github.com/indolly/Litemall-testing/actions/workflows/api-tests.yml)
+
 本项目围绕 Litemall 电商系统开展功能用例设计、接口自动化、H5 UI 自动化、权限与数据隔离、兼容性及性能测试实践，结合 Docker、MySQL、服务日志和资源监控验证系统行为。
 
 项目重点不是单纯堆积测试用例，而是通过“接口响应、业务状态、数据库记录、服务端资源”四个层面验证系统行为，并保留可复现的脚本、报告说明和结果截图。
@@ -22,6 +24,13 @@
 | 持续集成 | 配置 GitHub Actions：构建被测后端、启动 Docker 服务、运行 Pytest、归档 JUnit / Allure 原始结果及日志 |
 
 功能用例、评审修正及执行证据索引见[功能测试说明](test-functional/README.md)与[用例评审记录](test-functional/case-review.md)。
+
+## 典型缺陷案例
+
+- [商品详情不存在 ID：发现、定位、验证与禅道关闭](docs/bugs/goods-detail-invalid-id/README.md)：通过 Apifox 响应、容器日志与源码定位空指针，验证修复及正常查询回归。
+- [接口异常与权限测试报告](test-automation/docs/api-abnormal-permission-test-report.md)：购物车缺少数量、重复提交及跨用户下单，通过请求响应、日志、MySQL 和禅道保留证据。
+
+已知缺陷采用 `pytest.mark.xfail(strict=True)` 追踪；修复后出现 XPASS 时，流水线会提示调整回归用例。
 
 ## 自动化测试结果
 
@@ -119,6 +128,12 @@ litemall
 ```
 
 生成的 Allure 报告、JMeter JTL/HTML 报告、Docker 原始监控文件和数据库运行数据不提交到 GitHub，避免仓库包含大量可重复生成的临时文件。项目保留测试代码、执行脚本、说明文档和关键结果截图。
+
+## GitHub Actions CI
+
+工作流在临时 runner 中检出测试资产与被测系统源码，编译后端、准备 Docker 运行目录、初始化 MySQL，再运行 44 条接口回归用例；无论执行成功或失败，均归档 JUnit、Allure 原始结果及 Docker 日志，并清理临时环境。
+
+工作流配置见[api-tests.yml](.github/workflows/api-tests.yml)，各次云端执行状态以仓库 Actions 记录为准。
 
 ## 快速运行接口自动化
 
